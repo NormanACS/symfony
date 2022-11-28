@@ -1,84 +1,64 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { checkPropTypes } from "prop-types";
+import Navbar from "../../components/tools/navbar";
 
 const URL = "https://jsonplaceholder.typicode.com/posts/";
-const URL_ = "http://localhost:8000/api/posts/";
+const URL_ = "http://localhost:8000/api/test_posts/";
 
 const Home = () => {
+  const [posts, getAllPosts] = useState([]);
+  const [postsSymfony, getAllPostsSymfony] = useState([]);
 
-    const onSubmit = () => {
-        axios.get("http://localhost:8000/api/users")
-            .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-        console.log("clicked");
-    };
+  const getPostsSymfony = async () => {
+    await axios
+      .get(`${URL_}`)
+      .then((response) => {
+        getAllPostsSymfony(response.data["hydra:member"]);
+      })
+      .catch((error) => {
+        error;
+      });
+  };
 
-        const [posts, getAllPosts] = useState([]);
-        const [postsSynfony, getPostsSynfony] = useState ([]);
+  const getPosts = async () => {
+    await axios
+      .get(`${URL}`)
+      .then((response) => {
+        getAllPosts(response.data);
+      })
+      .catch((error) => console.error(error));
+  };
 
-        const getpostsSynfony = async () => {
-            await axios.get(`${URL_}`)
-            .then((response) =>{
-                getPostsSynfony(response.data["hydra:momber"]);
-                
-            })
-            .catch((error) => console.error(error));
-        };  
-        
-        const getPosts = async () => {
-            await axios.get(`${URL}`)
-            .then((response) =>{
-                getAllPosts(response.data);
-            })
-            .catch((error) => console.error(error));
-        };
+  useEffect(() => {
+    getPostsSymfony();
+    getPosts();
+  }, []);
 
-        useEffect(() => {
-            getPosts();
-            getpostsSynfony();
-        }, []);
-
-    return (
-        <div>
-            <h1>Hello HomePage !</h1>
-            <button type="button" onClick={() => onSubmit()}>Envoyer</button>
-            {postsSynfony.map((posts) => {
-                return (
-                    <div key={posts.id}>
-                        <ul>
-                            <li>votre nom:
-                                {posts.nom}
-                            </li>
-                            <li>votre age:
-                                {posts.age}
-                            </li>
-                        </ul>
-                    </div>
-                )
-            })}
-            
-            
-            {posts.map((posts) => {
-                return (
-                    <div key={posts.id}>
-                        <ul>
-                            <li>MON TITRE:
-                                {posts.title}
-                            </li>
-                            <li>mon corp:
-                                {posts.body}
-                            </li>
-                        </ul>
-                    </div>
-                )
-            })}
-        </div>
-    )
-}
+  return (
+    <>
+      <Navbar />
+      {postsSymfony.map((post) => {
+        return (
+          <div key={post.id}>
+            <ul>
+              <li>Votre nom est : {post.name}</li>
+              <li>Vous avez {post.age} ans !</li>
+            </ul>
+          </div>
+        )
+      })}
+      {posts.map((post) => {
+        return (
+          <div key={post.id}>
+            <ul>
+              <li>Le titre du post : {post.title}</li>
+              <li>Le corps du message : {post.body}</li>
+            </ul>
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
 export default Home;
