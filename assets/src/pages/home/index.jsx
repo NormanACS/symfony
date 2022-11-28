@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "../../components/tools/navbar";
+import { checkPropTypes } from "prop-types";
+// import Navbar from "../../components/navbar";
 
 const URL = "https://jsonplaceholder.typicode.com/posts/";
 const URL_ = "http://localhost:8000/api/test_posts/";
@@ -36,7 +37,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       {postsSymfony.map((post) => {
         return (
           <div key={post.id}>
