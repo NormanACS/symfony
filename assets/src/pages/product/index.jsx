@@ -35,7 +35,9 @@ const Product = () =>{
           <div key={Product.id}>
             <ul>
               <li>votre produit est: {Product.name}</li>
-              <li>Le prix est : {Product.price}</li>
+              <li>Description du produit : {Product.description}</li>
+              <li>Le prix est : {Product.price} €</li>
+              <button>Ajouter au pannier</button>
             </ul>
           </div>
         );
