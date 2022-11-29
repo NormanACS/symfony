@@ -5,10 +5,11 @@ import { checkPropTypes } from "prop-types";
 
 // const URL = "https://jsonplaceholder.typicode.com/posts/";
 // const URL_ = "http://localhost:8000/api/test_posts/";
+// const URL = "https://localhost:8000/api/client";
 
 const Home = () => {
-  // const [posts, getAllPosts] = useState([]);
-  // const [postsSymfony, getAllPostsSymfony] = useState([]);
+  const [posts, getAllPosts] = useState([]);
+  const [postsSymfony, getAllPostsSymfony] = useState([]);
 
   // const getPostsSymfony = async () => {
   //   await axios
@@ -38,16 +39,16 @@ const Home = () => {
   return (
     <>
       {/* <Navbar /> */}
-      {/* {postsSymfony.map((post) => {
-        return (
-          <div key={post.id}>
-            <ul>
-              <li>Votre nom est : {post.name}</li>
-              <li>Vous avez {post.age} ans !</li>
-            </ul>
-          </div>
-        )
-      })}
+      {/* {postsSymfony.map((post) => { */}
+      {/* //   return (
+      //     <div key={post.id}>
+      //       <ul>
+      //         <li>Votre nom est : {post.name}</li>
+      //         <li>Vous avez {post.age} ans !</li>
+      //       </ul>
+      //     </div>
+      //   )
+      // })} */}
       {posts.map((post) => {
         return (
           <div key={post.id}>
@@ -57,7 +58,7 @@ const Home = () => {
             </ul>
           </div>
         );
-      })} */}
+      })}
       <h1>Hello world !</h1>
     </>
   );
