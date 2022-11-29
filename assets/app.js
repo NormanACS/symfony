@@ -16,7 +16,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "./src/pages/home";
-import Contact from "./src/pages/contact";
+import Client from "./src/pages/client";
+import Product from "./src/pages/product";
 
 const router = createBrowserRouter([
     {
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
         element: <Home />,
     },
     {
-        path: "/contact",
-        element: <Contact />,
+        path: "/client",
+        element: <Client />,
+    },
+    {
+        path: "/product",
+        element: <Product />,
     }
 ])
 
