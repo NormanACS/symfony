@@ -27,9 +27,51 @@ const Product = () =>{
         getAllProduct();
     }, []);
 
+
+    const addProduct = () => {
+        alert(`produit ajouter : $(product.id)`);
+    };
+
+    const deleteProduct = () => {
+        alert(`produit supp : $(product.id)`);
+    };
+
+    const updateProduct = () => {
+        alert(`produit mise a jour : $(product.id)`);
+    };
+
+    const submiteForm = () => {
+        try {
+             console.log('ok');
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
+
         <>
+
         <h1>Hello product</h1>
+        <hr style={{marginTop: "5rem"}}/>
+        <form action="" style={{display: "flex", 
+        flexDirection: "column", 
+        width: "50%", 
+        marginTop: "2rem", 
+        marginBottom: "2rem"
+        }}>
+            <label htmlFor="text">Nom du produit :</label>
+            <input type="text" />
+            <label htmlFor="desciption">Description :</label>
+            <textarea type="desciption" />
+            <label htmlFor="price">Prix :</label>
+            <input type="number" />
+            <button type="button" onClick={() => submiteForm()}>Envoyer</button>
+        </form>
+        <hr style={{marginBottom: "5rem"}}/>
+
+
+
         {Products.map((Product) => {
         return (
           <div key={Product.id}>
@@ -37,7 +79,9 @@ const Product = () =>{
               <li>votre produit est: {Product.name}</li>
               <li>Description du produit : {Product.description}</li>
               <li>Le prix est : {Product.price} €</li>
-              <button>Ajouter au pannier</button>
+              <button type="button"  onClick={() => addProduct()}>Ajouter au pannier</button>
+              <button type="button"  onClick={() => deleteProduct()}>Supprimer un produit</button>
+              <button type="button"  onClick={() => updateProduct()}>Mise a jour</button>
             </ul>
           </div>
         );
