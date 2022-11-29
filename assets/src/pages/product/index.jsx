@@ -29,20 +29,20 @@ const Product = () =>{
 
 
     const addProduct = () => {
-        alert(`produit ajouter : $(product.id)`);
+        alert(`produit ajouter : ${Product.id}`);
     };
 
     const deleteProduct = () => {
-        alert(`produit supp : $(product.id)`);
+        alert(`produit supp : ${Product.id}`);
     };
 
     const updateProduct = () => {
-        alert(`produit mise a jour : $(product.id)`);
+        alert(`produit mise a jour : ${Product.id}`);
     };
 
     const submiteForm = () => {
         try {
-             console.log('ok');
+             alert('ok');
         } catch (error) {
             console.error(error);
         }
