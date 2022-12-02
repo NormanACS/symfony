@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios, { Axios } from "axios";
+import { useParams } from "react-router-dom";
 
 
 const URL = "http://localhost:8000/api/products";
 
+// const ID = "http://localhost:8000/api/products/id";
 
 
 
 const Product = () =>{
-
-    const [Products, getProduct] = useState([]);
+    
+    const [Products, getProduct, deletProduct] = useState([]);
     
     
     const getAllProduct = async () => {
@@ -26,18 +28,53 @@ const Product = () =>{
     useEffect(() => {
         getAllProduct();
     }, []);
+    
 
-
-    const addProduct = () => {
+    // Rajouter un product 
+    const addProduct = async () => {
         alert(`produit ajouter : ${Product.id}`);
+
+        axios.post(`${URL}`)
+        .then(response => this.setState({ articleId: response.data.id }))
+        .catch(error => {
+            this.setState({ errorMessage: error.message });
+            console.error('There was an error!', error);
+        });
     };
 
-    const deleteProduct = () => {
-        alert(`produit supp : ${Product.id}`);
-    };
+    const {id} = useParams();
 
-    const updateProduct = () => {
+                        // Delete un product
+    const deleteProduct = (id) => {
+         axios.delete(`http://localhost:8000/api/products/${id}`)
+            .then(response => {
+                getAllProduct();
+                console.log();
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        [];
+     };
+
+
+    // Update un product
+    const updateProduct = async () => {
         alert(`produit mise a jour : ${Product.id}`);
+
+        // await axios.put('http://localhost:8000/api/products/2', article)
+        // .then(response => this.setState({ updatedAt: response.data.updatedAt }))
+        // .catch(error => {
+        //     this.setState({ errorMessage: error.message });
+        //     console.error('There was an error!', error);
+        // });
+
+        await axios.put(`${URL}`)
+        .then(response => this.setState({ updatedAt: response.data.updatedAt }))
+        .catch(error => {
+            this.setState({ errorMessage: error.message });
+            console.error('There was an error!', error);
+        });
     };
 
     const submiteForm = () => {
@@ -72,6 +109,8 @@ const Product = () =>{
 
 
 
+
+
         {Products.map((Product) => {
         return (
           <div key={Product.id}>
@@ -79,8 +118,8 @@ const Product = () =>{
               <li>votre produit est: {Product.name}</li>
               <li>Description du produit : {Product.description}</li>
               <li>Le prix est : {Product.price} €</li>
-              <button type="button"  onClick={() => addProduct()}>Ajouter au pannier</button>
-              <button type="button"  onClick={() => deleteProduct()}>Supprimer un produit</button>
+              <button type="button"  onClick={() => addProduct()}>Ajouter</button>
+              <button type="button"  onClick={() => deleteProduct(Product.id)}>Supprimer un produit</button>
               <button type="button"  onClick={() => updateProduct()}>Mise a jour</button>
             </ul>
           </div>

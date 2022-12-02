@@ -38,17 +38,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
-      {/* {postsSymfony.map((post) => { */}
-      {/* //   return (
-      //     <div key={post.id}>
-      //       <ul>
-      //         <li>Votre nom est : {post.name}</li>
-      //         <li>Vous avez {post.age} ans !</li>
-      //       </ul>
-      //     </div>
-      //   )
-      // })} */}
       {posts.map((post) => {
         return (
           <div key={post.id}>
