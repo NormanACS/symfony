@@ -32,15 +32,28 @@ const Product = () =>{
 
     // Rajouter un product 
     const addProduct = async () => {
-        alert(`produit ajouter : ${Product.id}`);
-
-        axios.post(`${URL}`)
-        .then(response => this.setState({ articleId: response.data.id }))
-        .catch(error => {
-            this.setState({ errorMessage: error.message });
-            console.error('There was an error!', error);
-        });
+        axios.post('/user', {
+            firstName: '',
+            lastName: ''
+          })
+          .then(function (response) {
+            getAllProduct();
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     };
+
+//     const element = document.querySelector('#post-request-error-handling .article-id');
+// const article = { title: 'Axios POST Request Example' };
+// axios.post('https://reqres.in/invalid-url', article)
+//     .then(response => element.innerHTML = response.data.id )
+//     .catch(error => {
+//         element.parentElement.innerHTML = `Error: ${error.message}`;
+//         console.error('There was an error!', error);
+//     });
+
 
     const {id} = useParams();
 
@@ -120,7 +133,8 @@ const Product = () =>{
               <li>Le prix est : {Product.price} €</li>
               <button type="button"  onClick={() => addProduct()}>Ajouter</button>
               <button type="button"  onClick={() => deleteProduct(Product.id)}>Supprimer un produit</button>
-              <button type="button"  onClick={() => updateProduct()}>Mise a jour</button>
+              <button type="button"><a href="../contact">Mise a jour</a></button>
+              {/* <button type="button"  onClick={() => updateProduct()}> <a href="../contact">Mise a jour</a></button> */}
             </ul>
           </div>
         );
