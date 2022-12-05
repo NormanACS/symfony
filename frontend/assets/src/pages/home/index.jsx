@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { checkPropTypes } from "prop-types";
+import Navbar from "../../components/navbar";
 // import Navbar from "../../components/navbar";
 
 // const URL = "https://jsonplaceholder.typicode.com/posts/";
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <>
+    <Navbar/>
       {posts.map((post) => {
         return (
           <div key={post.id}>
