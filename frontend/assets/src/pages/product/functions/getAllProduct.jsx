@@ -2,11 +2,15 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Await, Link } from "react-router-dom";
 import deleteProduct from "./deleteProduct";
-import {URL_PRODUCT, URL_PRODUCT_CREATE, URL_PRODUCT_SHOW, URL_PRODUCT_EDIT,} from "../../../middleware/environment";
+import {URL_PRODUCT, 
+    URL_PRODUCT_CREATE, 
+    URL_PRODUCT_SHOW, 
+    URL_PRODUCT_EDIT,} from "../../../middleware/environment";
 
 
 const GetAllProducts = () => {
     const [allProducts, setAllProducts] = useState([]);
+    
     useEffect (() =>{
         getProduct();
     }, []);
@@ -18,7 +22,8 @@ const GetAllProducts = () => {
             console.error(err);
         });
     };
-    return(
+    
+    return (
         <>
         <h1>liste des produits</h1>
         <Link to={`${URL_PRODUCT_CREATE}`} >Creer un produit</Link>

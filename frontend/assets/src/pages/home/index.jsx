@@ -9,8 +9,8 @@ import Navbar from "../../components/navbar";
 // const URL = "https://localhost:8000/api/client";
 
 const Home = () => {
-  const [posts, getAllPosts] = useState([]);
-  const [postsSymfony, getAllPostsSymfony] = useState([]);
+  // const [posts, getAllPosts] = useState([]);
+  // const [postsSymfony, getAllPostsSymfony] = useState([]);
 
   // const getPostsSymfony = async () => {
   //   await axios
@@ -45,7 +45,7 @@ const Home = () => {
     <Navbar/>
       {posts.map((post) => {
         return (
-          <div key={post.id}>
+          <div key={post.id} className="bg-slate-300">
             <ul>
               <li>Le titre du post : {post.title}</li>
               <li>Le corps du message : {post.body}</li>
