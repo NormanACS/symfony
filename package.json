@@ -1,0 +1,47 @@
+{
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "run-p start:**",
+    "start:symfony":"cd backend && npm run symfony",
+    "start:react":"cd backend && npm run react",
+    "start:tailwind":"cd frontend && npm run tailwind"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.18.6",
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/stimulus-bridge": "^3.2.0",
+    "@symfony/webpack-encore": "^4.0.0",
+    "core-js": "^3.23.0",
+    "regenerator-runtime": "^0.13.9",
+    "tailwindcss": "^3.2.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-notifier": "^1.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
+    "sweetalert2": "^11.6.15"
+  },
+  "name": "symfo-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NormanACS/symfony.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/NormanACS/symfony/issues"
+  },
+  "homepage": "https://github.com/NormanACS/symfony#readme",
+  "description": ""
+}

@@ -38,7 +38,7 @@ const CreateProduct = () => {
         <button type="submit">Encoyer</button>
     </form>
     </>
-        )
-}
+        ),
+};
 
 export default CreateProduct;
