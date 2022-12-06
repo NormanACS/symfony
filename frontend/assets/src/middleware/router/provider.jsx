@@ -4,9 +4,9 @@ import { createBrowserRouter } from "react-router-dom";
 
 
 // PAGES CONPONENTS
-import Home from "../../pages/home";
-import Client from "../../pages/client";
-import Product from "../../pages/product";
+import Home from "../../pages/home/index";
+import Client from "../../pages/client/index";
+import Product from "../../pages/product/index";
 
 // CRUD OPERATION PRODUCT
 import CreateProduct from "../../pages/product/functions/createProduct";
