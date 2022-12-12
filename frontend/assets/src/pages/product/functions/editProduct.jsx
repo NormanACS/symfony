@@ -37,7 +37,7 @@ const onChangeDescription = (event) => {
 const onChangePrice = (event) => {
     setProduct({
         ...product,
-        price: event.target.value,
+        price: parseFloat(event.target.value),
     });
 };
 
