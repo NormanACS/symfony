@@ -59,8 +59,7 @@ const CreateProduct = () => {
         <input type="text" id="description" value={product.description} onChange={onChangeDescription}/>
         <label htmlFor="">Prix :</label>
         <input type="text" id="price" value={product.price} onChange={onChangePrice}/>
-        <button onClick={() => SubmitProduct()}>Envoyer</button>
-        <button type="submit">Envoyer</button>
+        <button type="submit" onClick={() => SubmitProduct()}>Envoyer</button>
     </form>
     </>
      );
