@@ -1,10 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import deleteProduct from "./deleteProduct";
 import Swal from "sweetalert2";
-import PropTypes, { func }  from "prop-types";
 import { URL_PRODUCT } from "../../../middleware/environment";
-import { set } from "core-js/core/dict";
 import { useParams } from "react-router-dom";
 
 

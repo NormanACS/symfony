@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Await, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import deleteProduct from "./deleteProduct";
 import {URL_PRODUCT, 
     URL_PRODUCT_CREATE, 
@@ -23,6 +23,8 @@ const GetAllProducts = () => {
         });
     };
     
+    // const { isAdmin } = false ;
+
     return (
         <>
         <h1>liste des produits</h1>
@@ -54,6 +56,7 @@ const GetAllProducts = () => {
                             <td>{product.price} €</td>
                             <td>
                                 <Link to= {`${URL_PRODUCT_SHOW}/${product.id}`}>Afficher</Link>
+                                {/* {isAdmin === true ? && } */}
                                 <Link to={`${URL_PRODUCT_EDIT}/${product.id}`} >Editer</Link>
                                 <button onClick={() => deleteProduct(product.id)}>Supprimer</button>
 
