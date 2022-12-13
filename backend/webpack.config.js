@@ -11,7 +11,7 @@ Encore
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
     .setPublicPath('/build')
-    .addEntry("admin", "../frontend/assets/admin/index.jsx")
+    .addEntry("admin", "../frontend/assets/src/pages/admin/index.jsx")
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
     .enableReactPreset()

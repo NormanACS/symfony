@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { checkPropTypes } from "prop-types";
 import Navbar from "../../components/navbar";
+import { Link } from "react-router-dom";
 // import Navbar from "../../components/navbar";
 
 // const URL = "https://jsonplaceholder.typicode.com/posts/";
@@ -42,6 +43,8 @@ const Home = () => {
       <h1 class="text-3xl font-bold underline">
     Hello world!
   </h1>
+
+  <button href="/logout">Deconnection</button>
     {/* <Navbar/> */}
       {/* {posts.map((post) => {
         return (
