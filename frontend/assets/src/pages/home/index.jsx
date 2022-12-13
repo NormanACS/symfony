@@ -42,8 +42,8 @@ const Home = () => {
       <h1 class="text-3xl font-bold underline">
     Hello world!
   </h1>
-    <Navbar/>
-      {posts.map((post) => {
+    {/* <Navbar/> */}
+      {/* {posts.map((post) => {
         return (
           <div key={post.id} className="bg-slate-300">
             <ul>
@@ -52,8 +52,7 @@ const Home = () => {
             </ul>
           </div>
         );
-      })}
-      <h1>Hello world !</h1>
+      })} */}
     </>
   );
 };
