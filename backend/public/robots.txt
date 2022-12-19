@@ -1,5 +1,0 @@
-# SITE SYMFO REACT
-
-User-agent: *
-Allow: /*
-Disallow: /node_modules

@@ -16,14 +16,14 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
-    private ?float $price = null;
+    private ?int $price = null;
 
     public function getId(): ?int
     {
@@ -54,12 +54,12 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPrice(): ?int
     {
         return $this->price;
     }
 
-    public function setPrice(?float $price): self
+    public function setPrice(?int $price): self
     {
         $this->price = $price;
 
