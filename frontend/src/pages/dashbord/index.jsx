@@ -5,7 +5,7 @@ const DashBord = () => {
     return (
         <>
         <Navbar/>
-        <h1>Hello {window.user.allias}, Bienvenue sur votre profil :</h1>
+        <h1>Hello {window.user.allias}, Bienvenue sur votre profil : </h1>
         </>
     );
 };
