@@ -16,7 +16,7 @@ import ShowProduct from "../../pages/product/functions/showProduct";
 export const Provider = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home/>
   },
   {
     path: "/clients",
