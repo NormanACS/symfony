@@ -9,9 +9,11 @@ use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
-
     public function load(ObjectManager $manager): void
     {
+        // $product = new Product();
+        // $manager->persist($product);
+
         // create 20 products! Bam!
         for ($i = 0; $i < 20; $i++) {
             $product = new Product();
@@ -27,6 +29,7 @@ class AppFixtures extends Fixture
             $client->setEmail('email '.$i);
             $manager->persist($client);
         }
+
         $manager->flush();
     }
 }
