@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import process from "process";
+// import process from "process";
 
 
 const Logout = () => {
-    axios.get('${process.env.LOGOUT}')
+    // axios.get('${process.env.LOGOUT}')
+    axios.get("/logout")
     .then(()=>{
         Swal.fire({
             icon:"warning",
