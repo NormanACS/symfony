@@ -34,5 +34,19 @@
     "router-dom": "^2.2.9",
     "run": "^1.4.0",
     "sweetalert2": "^11.4.8"
-  }
+  },
+  "name": "symfo-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NormanACS/symfony.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/NormanACS/symfony/issues"
+  },
+  "homepage": "https://github.com/NormanACS/symfony#readme",
+  "description": ""
 }
