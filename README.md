@@ -10,10 +10,16 @@
 
 3. Config du projet
 
-4. Séparation des fichiers partie Back-end et Front-end
+4. Installer react sur le projet 
 
-5. Création des pages 
+5. Séparation des fichiers partie Back-end et Front-end
 
-6. MCV Modèle()-vue(Twig)-contrôleur()
+6. Création des pages 
 
-7. 
+7. MVC Modèle()-vue(Twig)-contrôleur()
+
+8. Installer node_module dans tout les fichiers
+
+9. Config les packages, pour quand on lance le projet avec une seule commande ex: npm start dev 
+
+10. 
